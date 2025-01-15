@@ -39,8 +39,6 @@ and it should deploy the resources
 ```aws eks update-kubeconfig --name name-of-cluster --region region-where-cluster-is-deployed
 ```
 
-aws eks update-kubeconfig --name jjtech-eks-cluster --region us-east-1
-
 
 * To patch coredns to run on fargate nodes, run the command below 
 
