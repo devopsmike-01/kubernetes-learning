@@ -1,0 +1,1 @@
+Ensure to attach ebs csi driver policy to eks node role https://github.com/kubernetes-sigs/aws-ebs-csi-driver/blob/master/docs/install.md#installation-1

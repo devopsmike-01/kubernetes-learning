@@ -1,0 +1,27 @@
+--- 
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: my-local-pv
+spec:
+  persistentVolumeReclaimPolicy: Retain
+  capacity:
+    storage: 3Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  storageClassName: ""  # Name of the StorageClass
+  # claimRef:
+  #   namespace: application
+  #   name: local-pvc
+  local:
+    path: /opt
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - ip-10-0-1-33.ec2.internal
